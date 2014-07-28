@@ -1,7 +1,8 @@
 // tag::snippetA[]
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-release" }
+//        maven { url "http://repo.spring.io/libs-release" }
+        maven { url "http://localhost:8081/artifactory/remote-repos" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.0.RELEASE")
@@ -22,8 +23,9 @@ subprojects { subproject ->
     apply plugin: 'idea'
     version =  '0.1.0'
     repositories {
-        mavenCentral()
-        maven { url "http://repo.spring.io/libs-release" }
+//        mavenCentral()
+//        maven { url "http://repo.spring.io/libs-release" }
+        maven { url "http://localhost:8081/artifactory/remote-repos" }
     }
     dependencies {
         compile("org.springframework.data:spring-yarn-boot:2.0.0.RELEASE")
